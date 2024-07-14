@@ -151,15 +151,15 @@ class SudokuSolverTest {
     }
 
     private static SudokuBoard createHardSudokuSolution() {
-        List<Integer> row1 = List.of(8,5,1,3,4,9,7,6,2);
-        List<Integer> row2 = List.of(9,2,6,8,7,1,3,5,4);
-        List<Integer> row3 = List.of(4,7,3,2,5,6,8,1,9);
-        List<Integer> row4 = List.of(6,8,5,1,3,2,4,9,7);
-        List<Integer> row5 = List.of(2,1,9,7,6,4,5,8,3);
-        List<Integer> row6 = List.of(7,3,4,5,9,8,1,2,6);
-        List<Integer> row7 = List.of(5,6,8,4,2,7,9,3,1);
-        List<Integer> row8 = List.of(3,4,2,9,1,5,6,7,8);
-        List<Integer> row9 = List.of(1,9,7,6,8,3,2,4,5);
+        List<Integer> row1 = List.of(8, 5, 1, 3, 4, 9, 7, 6, 2);
+        List<Integer> row2 = List.of(9, 2, 6, 8, 7, 1, 3, 5, 4);
+        List<Integer> row3 = List.of(4, 7, 3, 2, 5, 6, 8, 1, 9);
+        List<Integer> row4 = List.of(6, 8, 5, 1, 3, 2, 4, 9, 7);
+        List<Integer> row5 = List.of(2, 1, 9, 7, 6, 4, 5, 8, 3);
+        List<Integer> row6 = List.of(7, 3, 4, 5, 9, 8, 1, 2, 6);
+        List<Integer> row7 = List.of(5, 6, 8, 4, 2, 7, 9, 3, 1);
+        List<Integer> row8 = List.of(3, 4, 2, 9, 1, 5, 6, 7, 8);
+        List<Integer> row9 = List.of(1, 9, 7, 6, 8, 3, 2, 4, 5);
         return new SudokuBoard(List.of(row1, row2, row3, row4, row5, row6, row7, row8, row9));
     }
 

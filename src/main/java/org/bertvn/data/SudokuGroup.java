@@ -4,6 +4,12 @@ import java.util.*;
 
 public class SudokuGroup {
 
+    public enum GroupType {
+        BLOCK,
+        COLUMN,
+        ROW,
+    }
+
     private final List<SudokuCell> cells;
 
     public SudokuGroup() {

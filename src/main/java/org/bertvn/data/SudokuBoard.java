@@ -38,11 +38,13 @@ public class SudokuBoard {
             blockMap.put(values[i], block);
         }
 
+        int id = 0;
         for(int i = 0; i < integerBoard.size(); i++) {
             List<Integer> rowValues = integerBoard.get(i);
             SudokuGroup row = rows.get(i);
             for(int j = 0; j < rowValues.size(); j++) {
-                SudokuCell cell = new SudokuCell(rowValues.get(j));
+                SudokuCell cell = new SudokuCell(rowValues.get(j), id);
+                id++;
                 columns.get(j).addCell(cell);
                 row.addCell(cell);
                 blockMap.get(toLocations(i, j)).addCell(cell);

@@ -4,13 +4,16 @@ import java.util.*;
 
 public class SudokuCell {
 
-    private final Set<SudokuGroup> groups = new HashSet<>();
+    private final List<SudokuGroup> groups = new ArrayList<>();
+    private final List<Integer> possibleNumbers;
+    private final int id;
 
     private int number;
-    private List<Integer> possibleNumbers;
 
-    public SudokuCell(int number) {
+    public SudokuCell(int number, int id) {
         this.number = number;
+        this.id = id;
+        possibleNumbers = new ArrayList<>();
     }
 
     public int getNumber() {
@@ -38,7 +41,12 @@ public class SudokuCell {
     }
 
     public void setPossibleNumbers(List<Integer> possibleNumbers) {
-        this.possibleNumbers = possibleNumbers;
+        this.possibleNumbers.clear();
+        this.possibleNumbers.addAll(possibleNumbers);
+    }
+
+    public void removePossibleNumber(Integer number) {
+        possibleNumbers.remove(number);
     }
 
     @Override
@@ -50,11 +58,11 @@ public class SudokuCell {
             return false;
         }
         SudokuCell cell = (SudokuCell) o;
-        return number == cell.number;
+        return number == cell.number && id == cell.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(number);
+        return Objects.hash(number, id);
     }
 }
